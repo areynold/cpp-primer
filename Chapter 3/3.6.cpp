@@ -20,8 +20,8 @@
 using namespace std;
 
 string convert_to_x(string s) {
-    for (auto c : s) {
-        c = "x";
+    for (auto &c : s) {
+        c = 'x';
     }
     return s;
 }
