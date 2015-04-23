@@ -37,6 +37,10 @@ string while_to_x(string s) {
 }
 
 string tradfor_to_x(string s) {
+    for (int i = 0; i <= s.size(); i++) {
+        auto &c = s[i];
+        c = 'x';
+    }
     return s;
 }
 
