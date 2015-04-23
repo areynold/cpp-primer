@@ -26,6 +26,14 @@ string convert_to_x(string s) {
     return s;
 }
 
+string while_to_x(string s) {
+    return s;
+}
+
+string tradfor_to_x(string s) {
+    return s;
+}
+
 int main() {
     string s;
     string r;  // Value of s as returned by function
