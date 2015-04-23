@@ -27,6 +27,12 @@ string convert_to_x(string s) {
 }
 
 string while_to_x(string s) {
+    int i = 0;
+    while (i <= s.size()) {
+        auto &c = s[i];
+        c = 'x';
+        i++;
+    }
     return s;
 }
 
