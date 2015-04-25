@@ -60,6 +60,8 @@ set(SOURCE_FILES
     "Chapter 3/3.4.cpp"
     "Chapter 3/3.5.cpp"
     "Chapter 3/3.6.cpp"
+    "Chapter 3/3.8.cpp"
+    "Chapter 3/3.10.cpp"
     "Chapter 3/change_char_in_range.cpp"
     "Chapter 3/getline.cpp"
     "Chapter 3/ispunct.cpp"
