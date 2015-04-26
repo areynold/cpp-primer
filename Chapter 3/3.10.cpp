@@ -6,7 +6,7 @@
 //                  punctuation and writes what was read but with the punctuation
 //                  removed.
 //
-//        Version:  0.0.1
+//        Version:  0.2.1
 //        Created:  04/25/2015 03:19:48 PM
 //       Revision:  none
 //       Compiler:  g++
@@ -16,8 +16,6 @@
 // =====================================================================================
 
 #include <iostream>
-#include <string>
-#include <bits/algorithmfwd.h>
 
 using namespace std;
 
@@ -30,12 +28,15 @@ string fetch_user_string() {
 }
 
 string strip_punctuation(string s) {
+    // This should really use string::erase instead of container vars
+    // Throwing out of range errors on removal
     cout << "Stripping punctuation from string: " << s << endl;
     string nopunct;
     for (auto c : s) {
-        if (!ispunct(c)) {
-            nopunct += c;
+        if (ispunct(c)) {
+            continue;
         }
+        nopunct += c;
     }
     return nopunct;
 }
