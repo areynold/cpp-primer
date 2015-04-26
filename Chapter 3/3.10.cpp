@@ -31,28 +31,13 @@ string fetch_user_string() {
 
 string strip_punctuation(string s) {
     cout << "Stripping punctuation from string: " << s << endl;
-//    for (char &c : s) {
-//        if (ispunct(c)) {
-//            s.erase(c, s.find_first_of(c));
-//        }
-//    }
-
-    s.erase(
-            remove_if(
-                    s.begin(),
-                    s.end(),
-                    [&](decltype(*s.begin()) c) {
-                        return ispunct(c);
-                    } ),
-            s.end()
-    );
-//    s.erase(
-//            remove_if(s.begin(), s.end(),
-//            [](char c) {
-//                return std::ispunct(static_cast<unsigned char>(c));
-//            }),
-//            s.end());
-    return s;
+    string nopunct;
+    for (auto c : s) {
+        if (!ispunct(c)) {
+            nopunct += c;
+        }
+    }
+    return nopunct;
 }
 
 int main() {
