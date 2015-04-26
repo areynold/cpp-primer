@@ -28,7 +28,7 @@ string convert_to_x(string s) {
 
 string while_to_x(string s) {
     int i = 0;
-    while (i <= s.size()) {
+    while (s[i]) {
         s[i] = 'x';
         i++;
     }
