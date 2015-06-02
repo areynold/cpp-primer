@@ -29,29 +29,25 @@ int main() {
     vector<string> v6{10};
     vector<string> v7{10, "hi"};
 
-    // This is dumb
+    // Using a vector for each vector type is dumb
     vector<vector<int>> int_v{v1, v2, v3, v4, v5};
     vector<vector<string>> string_v{v6, v7};
 
-    // This doesn't scale well
-    /*for (vector<int> &v : int_v) {
-      cout << v << " has " << v.size() << " elements." << endl;
-      if (!v.empty()) {
-        cout << "They are: " << endl;
-        while (auto &i : v) {
-          cout << i << endl;
-        }
+    // See if this can be rewritten without nested loops
+    for (auto &v : int_v) {
+      cout << v.size() << " elements" << endl;
+      if (v.empty()) { continue; }
+      for (auto &e : v) {
+        cout << "\t" << e << endl;
       }
     }
 
-    for (&v : string_v) {
-      cout << v << " has " << v.size() << " elements." << endl;
-      if (!v.empty()) {
-        cout << "They are: " << endl;
-        while (&s : v) {
-          cout << s << endl;
-        }
+    for (auto &v : string_v) {
+      cout << v.size() << " elements" << endl;
+      if (v.empty()) { continue; }
+      for (auto &e : v) {
+        cout << "\t" << e << endl;
       }
-    }*/
+    }
     return 0;
 }
