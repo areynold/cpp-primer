@@ -62,13 +62,7 @@ set(SOURCE_FILES
     "Chapter 3/3.6.cpp"
     "Chapter 3/3.8.cpp"
     "Chapter 3/3.10.cpp"
-    "Chapter 3/change_char_in_range.cpp"
-    "Chapter 3/getline.cpp"
-    "Chapter 3/ispunct.cpp"
-    "Chapter 3/meat.cpp"
-    "Chapter 3/print_empty_lines.cpp"
-    "Chapter 3/range.cpp"
-    "Chapter 3/read_arbitrary_number_of_strings.cpp"
-    "Chapter 3/subscript.cpp")
+    "Chapter 3/3.14.cpp"
+    "Chapter 3/3.15.cpp"
 
 add_executable(C___Primer ${SOURCE_FILES})
