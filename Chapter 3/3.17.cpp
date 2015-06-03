@@ -23,6 +23,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -36,7 +37,13 @@ int main() {
     }
 
     for (auto &w : word_list) {
-        cout << w << endl;
+        // Find element position in vector
+        // Looped find is inefficient. Look at map or hashmap.
+        int pos = find(word_list.begin(), word_list.end(), w) - word_list.begin();
+        pos += 1;   // We want 1-index, not 0-index for our output
+
+        cout << w;
+        if (pos % 8 == 0) { cout << endl; }
     }
     return 0;
 }
