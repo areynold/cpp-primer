@@ -28,6 +28,13 @@
 using namespace std;
 
 
+string convert_to_upper(string word) {
+    for (auto &c : word) {
+        c = toupper(c);
+    }
+    return word;
+}
+
 int main() {
     vector<string> word_list;
     string word_in;
@@ -36,14 +43,20 @@ int main() {
         word_list.push_back(word_in);
     }
 
-    for (auto &w : word_list) {
+    for (string &w : word_list) {
         // Find element position in vector
         // Looped find is inefficient. Look at map or hashmap.
         int pos = find(word_list.begin(), word_list.end(), w) - word_list.begin();
         pos += 1;   // We want 1-index, not 0-index for our output
 
+        w = convert_to_upper(w);
+
         cout << w;
-        if (pos % 8 == 0) { cout << endl; }
+        if (pos % 8 == 0) { 
+            cout << endl;
+        } else {
+            cout << " ";
+        }
     }
     return 0;
 }
