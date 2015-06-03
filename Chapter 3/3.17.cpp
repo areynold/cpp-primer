@@ -40,6 +40,9 @@ int main() {
     string word_in;
 
     while (cin >> word_in) {
+        // Accept single or multiline input
+        word_in.erase(remove(word_in.begin(), word_in.end(), '\n'), word_in.end());
+        word_in = convert_to_upper(word_in);
         word_list.push_back(word_in);
     }
 
@@ -48,8 +51,6 @@ int main() {
         // Looped find is inefficient. Look at map or hashmap.
         int pos = find(word_list.begin(), word_list.end(), w) - word_list.begin();
         pos += 1;   // We want 1-index, not 0-index for our output
-
-        w = convert_to_upper(w);
 
         cout << w;
         if (pos % 8 == 0) { 
